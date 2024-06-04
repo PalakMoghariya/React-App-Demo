@@ -1,6 +1,5 @@
 import './App.css';
 import img1 from './images/176.jpg'
-
 function App() {
   return (
     <>
