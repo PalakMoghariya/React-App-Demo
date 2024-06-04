@@ -1,0 +1,34 @@
+.p-lorem{
+  color: white;
+  background-color: black;
+}
+nav{
+  margin: 0 auto;
+  width:30%;
+}
+nav ul{
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+.img1{
+  width:100%;
+  /* height:500px; */
+}
+.img2{
+  width: 100%;
+}
+.nav1{
+  background-color: black;
+  color: white;
+  font-size: 25px;
+  width: 100%;
+}
+.ul1{
+  width: 50%;
+  margin: 0 auto;
+}
+.lorem-p{
+  color:white;
+  background-color: blue;
+}
