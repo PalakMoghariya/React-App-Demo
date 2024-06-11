@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 
 export default function TextForm(props) {
     const [text, setText] = useState("Input Your Text");
-
+    // text-variable
     const handleOnChange = (event) =>{
         // console.log("On Change");
         setText(event.target.value);
-
     }
     const handleUpChange = () =>{
         // console.log("Enter Your Text");
@@ -57,8 +56,6 @@ export default function TextForm(props) {
         <p>{text}</p>
     </div>
     </div>
-
-   
     </>
   )
 }
