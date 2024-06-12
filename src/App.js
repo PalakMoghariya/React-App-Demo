@@ -1,38 +1,44 @@
-import './App.css';
-import img1 from './images/176.jpg'
-function App() {
+import React, { useState } from 'react'
+import Navbar from './component/Navbar'
+import TextForm from './component/TextForm'
+
+export default function App() {
+  const[mode,setMode] = useState('light');
+
+  const[btnText,setbtnText] = useState("Enable Dark Mode");
+
+  const toggleMode = () =>{
+    if (mode === 'light') {
+      setMode('dark')
+      document.body.style.background="black";
+      document.body.style.color="white";
+      setbtnText("Enable Light Mode");
+    } else {
+      setMode('light');
+      document.body.style.background="white";
+      document.body.style.color="black";
+      setbtnText("Enable Dark Mode");
+    }
+  }
+
+  const toggleMode1 = () =>{
+    if (mode === 'light') {
+      setMode('dark')
+      document.body.style.background="pink";
+      document.body.style.color="black";
+      // setbtnText("Enable Light Mode");
+    } else {
+      setMode('light');
+      document.body.style.background="silver";
+      document.body.style.color="black";
+      // setbtnText("Enable Dark Mode");
+    }
+  }
+
   return (
     <>
-    <header>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact us</li>
-          <li>Service</li>
-        </ul>
-      </nav>
-      <p className="p-lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione similique voluptatibus, eos nisi necessitatibus velit id iure, nam voluptates temporibus quod vitae officia alias ab quibusdam. Consequatur quod quo architecto. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni porro tempora at deleniti ipsum, quaerat magnam modi perspiciatis vitae laudantium eaque quo, provident ea voluptatibus eligendi rerum. Veritatis, veniam magni?</p>
-      <img src="https://www.easemytrip.com/travel/img/sunset-agra.jpg" alt="" className="img1" />
-    </header>
-    <br />
-      <header>
-        <nav className="nav1">
-          <ul className="ul1">
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact us</li>
-            <li>Service</li>
-            <li>Pages</li>
-            <li>Account</li>
-          </ul>
-        </nav>
-        <p className="lorem-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem nesciunt, qui labore delectus fugiat repellat commodi corporis omnis unde ducimus necessitatibus inventore voluptas odio excepturi ratione sapiente veritatis sequi? Beatae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, facilis ipsa ab doloribus reiciendis numquam itaque, quo aut doloremque modi similique enim, dolores ullam perspiciatis vero perferendis? Reiciendis, ad sint?</p>
-
-        <img src={img1} alt="image" className="img2" />
-      </header>
+      <Navbar title="GIT" aboutUs="About Text" mode={mode} toggleMode={toggleMode} toggleMode1={toggleMode1} btntext={btnText} />
+      <TextForm heading="Enter Your Text" mode={mode}/>
     </>
-  );
+  )
 }
-
-export default App;
