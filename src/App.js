@@ -28,6 +28,12 @@ function App() {
       document.body.style.color='white';
       newbtnText("Enable Light Mode");
       showAlert("Dark Mode has Been Enable", "success");
+      setInterval(() => {
+        document.title = 'SIT - Admmision';
+      }, 2000);
+      setInterval(() => {
+        document.title = 'B.sc IT';
+      }, 1500);
     } else {
       setMode('light');
       document.body.style.background='white';
