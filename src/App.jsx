@@ -3,6 +3,8 @@ import {useState} from 'react'
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 
 function App() {
   const [mode,setMode] = useState ('light');
@@ -43,24 +45,24 @@ function App() {
     }
   }
 
+  const router = createBrowserRouter([
+    {
+      path:'/Home',
+      element:<><Navbar title="GIT" mode={mode} toggleMode={toggleMode} btntext={btnText}/>
+      <Alert alert={alert}/>
+      <TextForm heading = "Enter your Text Here" toggleMode={toggleMode} mode={mode} showAlert={showAlert} /></>
+    },
+    {
+      path:'/PrivacyPolicy',
+      element:<><Navbar title="GIT" mode={mode} toggleMode={toggleMode} btntext={btnText}/>
+      <PrivacyPolicy /></>
+    }
+  ])
   
 
-  // const btntext = () => {
-  //   if (mode === 'light') {
-  //     newbtnText('dark');
-  //     document.body.style.background='black';
-  //     document.body.style.color='white';
-  //   } else {
-  //     newbtnText('light');
-  //     document.body.style.background='white';
-  //     document.body.style.color='black';
-  //   }
-  // }
   return (
     <>
-      <Navbar title="GIT" mode={mode} toggleMode={toggleMode} btntext={btnText}/>
-      <Alert alert={alert}/>
-      <TextForm heading = "Enter your Text Here" toggleMode={toggleMode} mode={mode} showAlert={showAlert} />
+      <RouterProvider router ={router}/>
     </>
   );
 }
